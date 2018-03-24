@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://www.bienvillecapital.com/themes/8-emerging-markets -->
+<html class="is_modern js touch backgroundsize opacity cssanimations csstransforms no-csstransforms3d csstransitions video svg inlinesvg wf-futurapt-n4-active wf-futurapt-n7-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+  <title>showbook</title>
+  <meta name="description" content="Bienville Capital Management, LLC, is an SEC-registered investment advisory firm offering sophisticated and customized investment solutions to a select number of high net-worth and institutional investors.">
+  <meta name="keywords" content="asset allocation, wealth management, portfolio management, investment consulting services, investment research, private wealth management, capital preservation, alternative investments, long term growth, long-term growth, risk adjusted returns, portfolio manager, stocks, bonds, gold, mutual funds, derivatives, hedge fund">
+  <meta name="author" content="We Can&#39;t Stop Thinking | wcst.com">
+
+    <link rel="stylesheet" href="/static/iteminfo/app.css">
+    <script type="text/javascript" async="" src="/static/iteminfo/ga.js.下载"></script><script src="/static/iteminfo/modernizr.gz.js.下载"></script>
+
+
+  <link rel="stylesheet" href="/static/iteminfo/favor.css">
+
+  <link href="/static/iteminfo/css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="/static/iteminfo/htm3rpi.js.下载"></script>
+  <style type="text/css">.tk-futura-pt{font-family:"futura-pt",sans-serif;}</style><style type="text/css">@font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}</style><script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="app.gz" src="/static/iteminfo/app.gz.js.下载"></script></head>
+
+
+<script src="/static/iteminfo/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var range = 50;             //距下边界长度/单位px
+        var i = 0;
+        var maxnum2 = 5;
+        var totalheight = 0; 
+        var main = $("#row1");
+        var flag = 0;
+        var ret = {{bookList|safe}};
+        var ret1 = {{bookListf|safe}};
+        var maxnum1 = {{maxnum}};
+        var favour = {{favor|safe}}
+
+        var first = 0;
+        while(i != maxnum2){
+             flag = 0
+             while(favour[first]<i) first ++;
+             if(favour[first]==i) flag = 1;
+
+             if(flag==0) main.append("<li class='row' >  <div class='large-1 small-1 columns no_pl'><div class='icon pdf_ico'></div></div>  <div class='large-7 small-9 columns no_pad'> <div class='desc'>  <div class='theme_meta_title'>"+ ret[i][0]+"<span>‐</span> <div>"+ ret[i][1]+"</div></div>   <div class='theme_meta_date'>"+ret[i][2]+"<div>"+ ret[i][3]+" </div><form name='favor_form"+i+"' method='post' >{% csrf_token %}<div class='favor' onclick='javascript:forms["+i+"].submit();'><div class='favor_icon'></div><div class='favor_text'><span>收藏</span></div><input type='text' name='key' value='"+i+"' style='visibility: hidden;'></div></form></div></div> </div><div class='large-4 small-2 columns no_pad'><a href='"+ret[i][4]+"'  target='_blank' class='theme_button'><div class='tb_bg'><div data-text='Open .pdf'></div></div>  <span>Open&nbsp;.Journal</span>  </a>  </div></li>");
+             else main.append("<li class='row' >  <div class='large-1 small-1 columns no_pl'><div class='icon pdf_ico'></div></div>  <div class='large-7 small-9 columns no_pad'> <div class='desc'>  <div class='theme_meta_title'>"+ ret[i][0]+"<span>‐</span> <div>"+ ret[i][1]+"</div></div>   <div class='theme_meta_date'>"+ret[i][2]+"<div>"+ ret[i][3]+" </div><form name='favor_form"+i+"' method='post' >{% csrf_token %}<div class='favor2' onclick='javascript:forms["+i+"].submit();'><div class='favor_icon2'></div><div class='favor_text2'><span>已收藏</span></div><input type='text' name='key' value='"+i+"' style='visibility: hidden;'></div></form></div></div> </div><div class='large-4 small-2 columns no_pad'><a href='"+ret[i][4]+"'  target='_blank' class='theme_button'><div class='tb_bg'><div data-text='Open .pdf'></div></div>  <span>Open&nbsp;.Journal</span>  </a>  </div></li>");
+
+             i = i + 1;
+        }
+
+        $("#_themes_detail_content").scroll(function(){
+            var srollPos = $("#_themes_detail_content").scrollTop();    //滚动条距顶部距离(页面超出窗口的高度)
+
+            //console.log("滚动条到顶部的垂直高度: "+$(document).scrollTop());
+            //console.log("页面的文档高度 ："+$(document).height());
+            //console.log('浏览器的高度：'+$(window).height());
+            totalheight = parseFloat($("#_themes_detail_content").height()) + parseFloat(srollPos);
+
+            if(($(document).height()-range) <= totalheight  && i != maxnum1) {
+               flag = 0
+               while(favour[first]<i) first ++;
+               if(favour[first]==i) flag = 1;
+
+               if(flag==0) main.append("<li class='row' >  <div class='large-1 small-1 columns no_pl'><div class='icon pdf_ico'></div></div>  <div class='large-7 small-9 columns no_pad'> <div class='desc'>  <div class='theme_meta_title'>"+ ret[i][0]+"<span>‐</span> <div>"+ ret[i][1]+"</div></div>   <div class='theme_meta_date'>"+ret[i][2]+"<div>"+ ret[i][3]+" </div><form name='favor_form"+i+"' method='post' >{% csrf_token %}<div class='favor' onclick='javascript:favor_form"+i+".submit();'><div class='favor_icon'></div><div class='favor_text'><span>收藏</span></div><input type='text' name='key' value='"+i+"' style='visibility: hidden;'></div></form></div></div> </div><div class='large-4 small-2 columns no_pad'><a href='"+ret[i][4]+"'  target='_blank' class='theme_button'><div class='tb_bg'><div data-text='Open .pdf'></div></div>  <span>Open&nbsp;.Journal</span>  </a>  </div></li>");
+               else main.append("<li class='row' >  <div class='large-1 small-1 columns no_pl'><div class='icon pdf_ico'></div></div>  <div class='large-7 small-9 columns no_pad'> <div class='desc'>  <div class='theme_meta_title'>"+ ret[i][0]+"<span>‐</span> <div>"+ ret[i][1]+"</div></div>   <div class='theme_meta_date'>"+ret[i][2]+"<div>"+ ret[i][3]+" </div><form name='favor_form"+i+"' method='post' >{% csrf_token %}<div class='favor2' onclick='javascript:favor_form"+i+".submit();'><div class='favor_icon2'></div><div class='favor_text2'><span>已收藏</span></div><input type='text' name='key' value='"+i+"' style='visibility: hidden;'></div></form></div></div> </div><div class='large-4 small-2 columns no_pad'><a href='"+ret[i][4]+"'  target='_blank' class='theme_button'><div class='tb_bg'><div data-text='Open .pdf'></div></div>  <span>Open&nbsp;.Journal</span>  </a>  </div></li>");
+               i = i + 1;
+            }
+        });
+
+
+    });
+</script>
+
+
+
+
+<body>
+
+  <div id="app" class="">
+    <nav>
+      <div id="nav_wrap">
+        <ul id="_nav_list">
+          <li><a href="/">主页</a></li>
+          <li><a href="/info/">个人信息</a></li>
+          <li><a href="/showbook/">报刊信息</a></li>
+          <li><a href="/BookArrival/">消息通知</a></li>
+        </ul>
+        <div id="footer">
+          <p>软件工程五念小组</p>
+        </div>
+      </div>
+      <div id="bar">
+        <div id="menu_button"></div>
+        <div id="bcm_logo"></div>
+      </div>
+    </nav>
+
+    <!-- // Swapped content will go here \\ -->
+    <div id="main">
+      <!-- // All non-nav content will live in here \\ -->
+      <div id="content" style="opacity: 1;">
+        <div id="themes_detail_view" class="tablet_scrollable" data-bg="" style="background-image: url(&quot;http://bcm-static.s3.amazonaws.com/uploads/52b34d822d0d4_BCM_EmergingMarkets_Theme_2.png&quot;);">
+  <div id="themes_bg_cover" style="opacity: 0;"></div>
+  <div id="themes_bottom_extension_cover"></div>
+  <div class="left_col frty" id="_themes_detail_sub_nav" style="opacity: 1;">
+    <div class="antiscroll-wrap">
+      <div id="tl_box_wrap">
+        <div class="antiscroll-inner">
+          <div class="right">
+            <h1>报刊信息</h1>
+              <div id="themes_list_wrap">
+              <ul id="themes_list">
+                <li class="cur_theme">
+                  <a href="/showbook/" data-hash="argentinas-regime-change">浏览书刊</a>
+                  <div class="sprite"></div>
+                </li>
+                <li class="">
+                  <a href="/myfavor/" data-hash="disruptive-technologies">我的收藏</a>
+                  <div class="sprite"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right_col scrollable sxty" id="_themes_detail_content">
+    <div id="themes_detail_content_nest">
+<div id="theme_description" style="height: 20px;">
+</div>
+<div id="theme_meta">
+
+  <hr>
+
+
+<ul style="opacity: 1;height:18400px" id = "row1">
+{%for i in books%}
+<li class="row" >
+
+  <div class="large-1 small-1 columns no_pl">
+    <div class="icon pdf_ico"></div>
+  </div>
+
+  <div class="large-7 small-9 columns no_pad">
+    <div class="desc">
+      <div class="theme_meta_title">{{i.0}} <span>‐</span> <div>{{i.1}}</div></div>
+      <div class="theme_meta_date">{{i.2}} <div>{{i.3}}</div></div>
+
+      <form id="favor_form" method="post" >
+			<div class="favor" onclick="javascript:favor_form.submit();">
+				<div class="favor_icon"></div>
+		        <div class="favor_text"><span>已收藏</span></div>
+			</div>
+      </form>
+
+    </div>
+
+  </div>
+
+    <div class="large-4 small-2 columns no_pad">
+    <a href="http://bcm-static.s3.amazonaws.com/uploads/5624eefc0bc26_Emerging%20Markets%20-%20The%20Pressure%20Intensifies%20(October%202015).pdf" target="_blank" class="theme_button">
+      <div class="tb_bg"><div data-text="open pdf"></div></div>
+      <span>&nbsp;&nbsp;open pdf&nbsp;&nbsp;</span>
+    </a>
+  </div>
+</li>
+  {%endfor%}
+</ul>
+</div>    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+  <!-- // end #app \\ -->
+    <script data-main="http://dcikynrkliczx.cloudfront.net/assets/dist/public/js/app.gz" src="/static/iteminfo/require.gz.js.下载"></script>
+
+   <!-- <script data-main="/build/js/app.min.js" src="/js/lib/require.js"></script> -->
+
+   <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20484083-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+
+</body></html>

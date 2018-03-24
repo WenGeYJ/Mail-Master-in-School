@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />	
+	<title>1</title>
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/fresh-bootstrap-table.css" rel="stylesheet" />
+</head>
+<body>
+
+
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">         
+                <div class="fresh-table full-color-orange">
+
+                    <div class="toolbar">
+                        <button id="laertBtn" class="btn btn-default">登记</button>
+                    </div>
+                    
+                    <table id="fresh-table" class="table">
+                        <thead>
+                            <th data-field="id">书籍/信</th>
+                        	<th data-field="name" data-sortable="true">到达状态</th>
+                        </thead>
+                        <tbody>
+                            <tr>     
+                            	<td>看天下1</td>
+                      			<td><button>到达</button></td>
+                            </tr>
+                            <tr>                   
+                            	<td>青年文摘</td>
+                          		<td><button>到达</button></td>
+                            </tr>
+                            <tr>                   
+                            	<td>读者</td>
+                        		<td><button>到达</button></td>
+                            </tr>
+                            <tr>                   
+                            	<td>看天下</td>
+                          		<td><button>到达</button></td>
+                            </tr>
+                            <tr>             
+                            	<td>信</td>
+                           		<td><button>到达</button></td>
+                            </tr>
+                            <tr>                   
+                                <td>读者</td>
+                                <td><button>到达</button></td>
+                            </tr>
+                            <tr>                   
+                                <td>读者</td>
+                                <td><button>到达</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+    <script type="text/javascript">
+        var $alertBtn = $('#alertBtn');
+            
+        $().ready(function(){
+            $alertBtn.click(function () {
+                alert("You pressed on Alert");
+            });
+            
+        });       
+    </script>
+
+</html>

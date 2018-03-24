@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+
+.favor{
+	height:24px;
+	width:76px;
+	border:1px solid #cbe5e0;
+  float: left;
+}
+
+.favor .favor_icon{
+	height:18px;
+	width:18px;
+	background:url(favourites0.png);
+	background-size:cover;
+	float:left;
+	position: relative;
+	margin-top:1.8px;
+	margin-left:4.8px;
+}
+.favor .favor_text{
+	color:#cbe5e0;
+	font-size: 15px;
+	float:left;
+	position: relative;
+	margin-top:-0.5px;
+  margin-bottom:5px;
+	margin-left:10px;
+}
+
+.favor:hover{
+  border:1px solid #FFF;
+}
+.favor:hover .favor_icon{
+  background:url(favourites1.png);
+  background-size:cover;
+}
+.favor:hover .favor_text{
+  color:#FFF;
+}
+
+
+
+
+
+
+.favor2{
+	height:24px;
+	width:90px;
+	border:1px solid #FFF;
+	float:lefe;
+}
+
+.favor2 .favor_icon2{
+	height:18px;
+	width:18px;
+	background:url(favourites1.png);
+	background-size:cover;
+	float:left;
+	position: relative;
+	margin-top:1.8px;
+	margin-left:4.8px;
+}
+
+.favor2 .favor_text2{
+	color:#FFF;
+	font-size: 15px;
+	float:left;
+	position: relative;
+	margin-top:-0.5px;
+	margin-bottom::5px;
+	margin-left:10px;
+}

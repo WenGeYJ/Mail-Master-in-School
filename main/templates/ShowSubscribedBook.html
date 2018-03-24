@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的订阅</title>
+</head>
+<body>
+{% for i in subscribedBookList %}
+<p>{{ i.ISBN }} {{ i.bookName }} {{ i.bookType }} {{ i.price }}</p>
+{% endfor %}
+</body>
+</html>

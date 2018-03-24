@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="/static/regist.css"/>
+</head>
+<body>
+    <div id="layer1" style="position:absolute;width:100%;height:100%;z-index:-1">
+        <img src="/static/regist_bg.jpg" height="100%" width="100%"/>
+    </div>
+	<div id="login">
+    	<h1>Regist</h1>
+        <form method="post">
+            {% csrf_token %}
+        	<div class="div-inline"><input class="class0" type="text" required="required" placeholder="用户名" name="u"></div>
+            <div class="div-inline"><input type="password" required="required" placeholder="密码" name="p"></div>
+            <div class="div-inline"><input type="password" required="required" placeholder="确认密码" name="pp"></div>
+            <div class="div-inline"><input type="text" required="required" placeholder="邮箱" name="e"></div>
+            <input class="class0" type="text" required="required" placeholder="手机号" name="phonenumber">
+            <input class="class0" type="text" required="required" placeholder="班级" name="sc">
+            <input class="class0" type="text" required="required" placeholder="学号" name="sn">
+            <button id="hid" class="but" type="submit">注册</button>
+        </form>
+    </div>
+</body>
+</html>
